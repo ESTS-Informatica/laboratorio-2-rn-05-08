@@ -24,7 +24,10 @@ public class Company {
      * Constructor of class Company
      */
     public Company() {
-
+        this.clients = new ArrayList<>();
+        this.sellers = new ArrayList<>();
+        this.properties = new ArrayList<>();
+        this.sells = new ArrayList<>();
     }
 
     /**
@@ -33,7 +36,7 @@ public class Company {
      * @return This company clients.
      */
     public List<User> getClients() {
-        return null;         // dummy implementation
+        return clients;
     }
 
     /**
@@ -42,7 +45,7 @@ public class Company {
      * @return This company sellers.
      */
     public List<User> getSellers() {
-        return null;         // dummy implementation
+        return sellers;
     }
 
     /**
@@ -51,7 +54,7 @@ public class Company {
      * @return This company's properties.
      */
     public List<Property> getProperties() {
-        return null;         // dummy implementation
+        return properties;
     }
 
     /**
@@ -60,7 +63,7 @@ public class Company {
      * @return This company sells.
      */
     public List<Sell> getSells() {
-        return null;         // dummy implementation
+        return sells;
     }
 
     /**
@@ -70,7 +73,13 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerClient(User client) {
-        return true;         // dummy implementation
+        if (client == null) {
+            throw new IllegalArgumentException("Client cannot be null");
+        }
+        if (clients.contains(client)) {
+            return false; // Client already registered
+        }
+        return clients.add(client);
     }
 
     /**
@@ -80,7 +89,13 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerSeller(User seller) {
-        return true;         // dummy implementation
+        if (seller == null) {
+            throw new IllegalArgumentException("Seller cannot be null");
+        }
+        if (sellers.contains(seller)) {
+            return false; // Seller already registered
+        }
+        return sellers.add(seller);
     }
 
     /**
@@ -90,7 +105,13 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerProperty(Property property) {
-        return true;         // dummy implementation
+        if (property == null) {
+            throw new IllegalArgumentException("Property cannot be null");
+        }
+        if (properties.contains(property)) {
+            return false; // Property already registered
+        }
+        return properties.add(property);
     }
 
     /**
@@ -100,7 +121,7 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerSell(Sell sell) {
-        return true;         // dummy implementation
+        return true;
     }
 
     /**
@@ -112,7 +133,7 @@ public class Company {
      * @return true If the request succeeds, false otherwise.
      */
     public boolean createSell(User client, User seller, Property property) {
-        return true;         // dummy implementation
+        return true;
     }
 
     /**
@@ -122,7 +143,7 @@ public class Company {
      * @return The total number of sells in the year.
      */
     public int calculateSellsOfTheYear(int year) {
-        return 0;         // dummy implementation
+        return 0;
     }
 
     /**
@@ -132,7 +153,7 @@ public class Company {
      * @return The name of the seller of the year.
      */
     public String findSellerOfTheYear(int year) {
-        return null;         // dummy implementation
+        return null;
     }
 
 }
