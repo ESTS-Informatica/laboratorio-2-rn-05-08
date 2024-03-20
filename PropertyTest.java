@@ -18,6 +18,6 @@ public class PropertyTest{
         double price = 150000.0;
         
         Property property1 = new Property(description, price);
-        assertEquals("Descrição: " + description + "\nPreco: " + price + " Euros", property1toString());
+        assertEquals("Descrição: " + description + "\nPreco: " + price + " Euros", property1.toString());
     }
 }
